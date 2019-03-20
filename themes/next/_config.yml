@@ -658,7 +658,7 @@ gitment:
 # Demo: https://gitalk.github.io
 gitalk:
   enable: true
-  github_id: iepngs@aliyun.com # Github repo owner
+  github_id: iepngs # Github repo owner
   repo: iepngs.github.io # Repository name to store issues
   client_id: 8ac8d9fd7ed2acf1cd09 # Github Application Client ID
   client_secret: face0ba96606efb9e504d4d1c78d2bcf557c9444 # Github Application Client Secret
