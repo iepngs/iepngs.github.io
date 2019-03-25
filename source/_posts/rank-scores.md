@@ -1,7 +1,7 @@
 ---
 title: 分数排名
 date: 2019-03-22 16:25:35
-tags:
+tags: MYSQL
 ---
 
 ### 原题描述
@@ -46,7 +46,7 @@ tags:
 SELECT s.Score,t.Rank 
 FROM Scores s
 INNER JOIN (
-    SELECT a.Score ,@num :=@num + 1 Rank 
+    SELECT a.Score, @num := @num + 1 Rank 
     FROM (SELECT DISTINCT Score FROM Scores ORDER BY Score DESC) a, (SELECT @num := 0) n
     ) t 
 ON s.Score = t.Score
@@ -61,7 +61,7 @@ ORDER BY s.Score DESC;
 #### 第一种：
 ```sql
 SELECT Score, (SELECT COUNT(DISTINCT score) FROM Scores WHERE score >= s.score) AS Rank 
-FROM Scores s ORDER BY Score DESC ;
+FROM Scores s ORDER BY Score DESC;
 ```
 
 #### 第二种：
@@ -74,7 +74,7 @@ ORDER BY a.Score DESC;
 
 #### 第三种：
 ```sql
-SELECT Score, (SELECT COUNT(DISTINCT s.Score)+1 FROM Scores AS s WHERE s.Score > Scores.Score) AS Rank 
+SELECT Score, (SELECT COUNT(DISTINCT s.Score) + 1 FROM Scores AS s WHERE s.Score > Scores.Score) AS Rank 
 FROM Scores 
 ORDER BY Score DESC;
 ```
