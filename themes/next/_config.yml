@@ -234,8 +234,9 @@ links_layout: block
 #links_layout: inline
 links:
   #Title: http://example.com
-  ShipengFish: https://shipengfish.github.io/
+  ShipengFish: https://huanxi.pub/
   flysnow: https://www.flysnow.org/2019/04/19/team-leader.html
+  烟花易冷: http://bingjian-zhu.github.io/
 
 # Sidebar Avatar
 avatar:
